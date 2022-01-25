@@ -1,0 +1,420 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        nav{
+
+/*          加了这个无法用浮动
+            display: flex;
+            align-items: center;
+            justify-content: right; */
+            position: fixed;
+            width:100%;
+            height:50px;
+            background-color: rgb(11, 11, 12);
+
+        }
+        nav ul{
+
+            float: right;
+            list-style: none;
+            display: block;
+        }
+        nav ul li{
+            /* 使其变为行内元素，一行显示 */
+            display: inline-block;
+            color: #fff;    
+            font-family: Tahoma;
+        }
+        nav ul li a {
+            display: inline-block;
+            text-decoration: none;
+            padding: 0; 
+            font-size: 14px;
+            color: #fff;    
+            font-family: Tahoma;
+        }
+        .logo{
+/*          相对定位logo，但是只对特定页面有效 
+            position: relative;
+            margin-right: 55vw; */
+            float: left;
+        }
+        .head_picture{
+            width: 100vw;
+            height: auto;
+        }
+        .header{
+            width: 100%;
+            height: auto;
+        }
+        .head_picture h1 {
+            position: absolute;
+            left: 20%;
+            top: 15%;
+            text-align: center;
+            color: rgb(255, 255, 255);
+        }
+        h2 {
+            text-align: center;
+        }
+        main .intention {
+            margin: 5% 10% 5% 10%;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+        }
+        .schdule {
+            margin: 5% 10% 5% 10%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .pic1, .pic2, .pic3, .pic4{
+            height: 25%;
+            width: 25%;
+            border: 2px solid black;
+            margin: 1% 1% 1% 1%;
+        }
+        .c1, .c2, .c3, .c4{
+            height: 10%;
+            width: 25%;
+            border: 2px solid black;
+            margin: 1% 1% 1% 1%;
+        }
+        footer {
+            width: 100%;
+            height: 30%;
+            background-color: antiquewhite;
+        }
+        footer ul{
+            float: right;
+            list-style: none;
+            display: block;
+        }
+        footer ul li{
+            /* 使其变为行内元素，一行显示 */
+
+            color: rgb(0, 0, 0);    
+            font-family: Tahoma;
+        }
+        footer ul li a {
+            display: inline-block;
+            text-decoration: none;
+            padding: 0; 
+            font-size: 14px;
+            color: rgb(0, 0, 0);    
+            font-family: Tahoma;
+        }
+        footer .decrition{
+            display: flex;
+            flex-direction: row;
+        }
+        footer .circle{
+            display: block;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            width: 80px;
+            height: 80px;
+            background-color: black;
+            text-align: center;
+            color: #fff;
+        }
+        /* 第二部分 */
+        .schdule ul{
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            width: 50%;
+            height: 20%;
+        }
+        .selector {
+            float: right;
+        }
+        .schdule ul li{
+            /* 使其变为行内元素，一行显示 */
+            color: rgb(0, 0, 0);    
+            font-family: Tahoma;
+            width: 100%;
+            height: auto;
+            border: 2px solid black;
+            margin: 1%;
+            text-align: center;
+        }
+        .schdule ul li a {
+            text-decoration: none;
+            padding: 0; 
+            font-size: 20px;
+            color: rgb(0, 0, 0);    
+            font-family: Tahoma;
+        }
+        .schdule ul li:hover {
+            background-color: rgb(155, 148, 148);
+        }
+        span{
+            background-color: rgb(62, 62, 138);
+            border-radius: 25%;
+            color: #fff;
+        }
+        main{
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        .rollin{
+            height: 20%;
+            width: 70%;
+            margin: -10% 15% 1% 15%;
+            display: block;
+            background-color: black;
+            text-align: center;
+            color: #fff;
+            position: relative;
+            z-index: 1;
+        }
+        .rollin label {
+            display: block;
+            margin-top: 1%;
+            margin-bottom: 1%;
+        }
+        button{
+            color: #fff;
+            width: 20%;
+            height: 20%;
+            background-color: cadetblue;
+            font-size: large;
+        }
+        button:hover{
+            background-color: rgb(155, 148, 148);
+        }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav>
+            <a href="#"><img class="logo" src="./logo.jpg" alt="logo"></a>
+            <ul>
+                <li><a href="#">开发文档</a></li>
+                <li>|</li>
+                <li><a href="#">交流中心</a></li>
+                <li>|</li>
+                <li><a href="#">服务市场</a></li>
+                <li>|</li>
+                <li><a href="#">开源管理</a></li>
+                <li>|</li>
+                <li><a href="#">管理中心</a></li>
+                <li>|</li>
+            </ul>
+        </nav>
+        <div class="head_picture">
+            <img class="header" src="./head.jpg" alt="header">
+            <h1>百度前端训练营2021开营了，赶紧报名吧！</h1>
+        </div>
+    </header>
+
+    <main>
+        <div class="rollin">
+            <div id="congrates">v恭喜报名成功</div>
+            <div id="sorry">x抱歉，邮箱格式错误，报名失败</div>
+            <div id="selectorContainer">
+                <label>选择您的学校<input type="text" list="school" onchange="secondSelect()"></label>
+                <datalist id="school">
+                </datalist>
+                
+                <label>选择入学年份<input type="text" list = "year"></label>
+                <datalist id="year">
+
+                </datalist>
+                
+                <label>输入电子邮箱<input type="text" onchange="getEmail()"></label>
+                
+                <button onclick="checkEmail()">报名</button>
+            </div>
+        </div>
+        <h2>我们的宗旨</h2>
+        <div class="intention">
+            <div class="pic1">自律独立思考</div>
+            <div class="pic2">实践</div>
+            <div class="pic3">总结回顾</div>
+            <div class="pic4">分享交流</div>
+        </div>
+        <h2>课程安排</h2>
+        <div class="selector">
+            <input onclick = "showAll()" type="radio" name="course" id="all" value="">
+            <label for="all">全部</label>
+            <input onclick = "showHtml()" type="radio" name="course" id="html" value="">
+            <label for="html">HTML</label>
+            <input onclick="showCss()" type="radio" name="course" id="css" value="">
+            <label for="css">CSS</label>
+            <input type="radio" name="course" id="javascript" value="">
+            <label onclick="showJs()" for="javascript">JavaScript</label>
+        </div>
+        <div class="schdule">
+            <ul>
+                <li><a href="#">第一课</a><span>html</span></li>
+                <li><a href="#">第二课</a><span>css</span></li>
+                <li><a href="#">第三课</a><span>javascript</span></li>
+                <li><a href="#">第四课</a><span>html,css,javascript</span></li>
+                <li><a href="#">第五课</a><span>html,javascript</span></li>
+                <li><a href="#">第六课</a><span>css,javascript</span></li>
+                <li><a href="#">第七课</a><span>html,css</span></li>
+                <li><a href="#">第八课</a><span>html,css,javascript</span></li>
+            </ul>
+        </div>
+    </main>
+
+    <footer>
+        <div class="decrition">        
+            <div class="circle">I</div>
+            <div class="circle">F</div>
+            <div class="circle">E</div>
+        </div>
+        <ul class="link1">
+            <li><a href="#"><strong>LINKS</strong></a></li>
+            <li><a href="#">百度技术培训中心</a></li>
+            <li><a href="#">百度技术</a></li>
+            <li><a href="#">技术培训中心</a></li>
+            <li><a href="#">百度技术培训中心</a></li>
+            <li><a href="#">百度技术</a></li>
+        </ul>
+        <ul class="link2">
+            <li><a href="#"><strong>LINKS</strong></a></li>
+            <li><a href="#">百度技术培训中心</a></li>
+            <li><a href="#">百度技术</a></li>
+            <li><a href="#">技术培训中心</a></li>
+            <li><a href="#">百度技术培训中心</a></li>
+            <li><a href="#">百度技术</a></li>
+        </ul>
+        <ul class="link3">
+            <li><a href="#"><strong>LINKS</strong></a></li>
+            <li><a href="#">百度技术培训中心</a></li>
+            <li><a href="#">百度技术</a></li>
+            <li><a href="#">技术培训中心</a></li>
+            <li><a href="#">百度技术培训中心</a></li>
+            <li><a href="#">百度技术</a></li>
+        </ul>
+    </footer>
+
+    <script>
+        let s = document.getElementsByTagName("span")
+        let u = document.getElementsByTagName("ul")[1]
+        let l = u.getElementsByTagName("li")
+        let list = document.getElementsByTagName("datalist")
+        const h = /html/
+        const c = /css/
+        const j = /javascript/
+        const showAll = function(){
+            for(let i = 0; i < s.length; i++){
+                l[i].style.display = "block"
+            }
+        }
+        const showHtml = function(){
+            showAll()
+            for(let i = 0; i < s.length; i++){
+                if(!h.test(s[i].innerText)){
+                    l[i].style.display = "none"
+                }
+            }
+        }
+        const showCss = function(){
+            showAll()
+            for(let i = 0; i < s.length; i++){
+                if(!c.test(s[i].innerText)){
+                    l[i].style.display = "none"
+                }
+            }
+        }
+        const showJs = function(){
+            showAll()
+            for(let i = 0; i < s.length; i++){
+                if(!j.test(s[i].innerText)){
+                    l[i].style.display = "none"
+                }
+            }
+        }
+        //解耦入学年份
+        for(let i = 1998; i < 2021; i++){
+            let child = document.createElement("option")
+            child.value = `${i}`
+            list[1].appendChild(child)
+        }
+        //解耦省市学校二级菜单
+        let distinct = ["北京", "上海", "四川", "浙江", "广东"]
+        for(let i = 0; i < distinct.length; i++){
+            let child = document.createElement("option")
+            child.value = `${distinct[i]}`
+            list[0].appendChild(child)
+        }
+        //为什么不能定义变量document.getElementsByTagName("input")[0].value？？？？？
+        const secondSelect = function(){
+            if(document.getElementsByTagName("input")[0].value === "北京"){
+                sign = 1;
+                removeChild()
+                addChild()
+            }
+
+        }
+        let sign = 0;
+        const removeChild = function(){
+            let opt = list[0].getElementsByTagName("option")
+            for(let i = 0; i < opt.length; i++){
+                list[0].removeChild(opt[i])
+                i -= 1
+            }
+        }
+        const addChild = function(){
+            if(sign = 1){
+                let arr = ["清华大学", "北京大学", "中国人民大学"]
+                for(let i = 0; i < arr.length; i++){
+                    let child = document.createElement("option")
+                    child.value = `${arr[i]}`
+                    list[0].appendChild(child)
+                }
+            }
+        }
+        //验证邮箱
+        const showCongrates = function(){
+            selectcontainer.style.display = "none"
+            congrates.style.display = "block"
+        }
+        const showSorry = function(){
+            selectcontainer.style.display = "none"
+            sorry.style.display = "none"
+        }
+        const showOriginal = function(){
+            selectcontainer.style.display = "block"
+            sorry.style.display = "none"
+            congrates.style.display = "none"
+        }
+        let email = ""
+        const getEmail = function(){
+            email = document.getElementsByTagName("input")[2].value
+        }
+        let selectcontainer = document.getElementById("selectorContainer")
+        let sorry = document.getElementById("sorry")
+        let congrates = document.getElementById("congrates")
+        sorry.style.display = "none"
+        congrates.style.display = "none"
+        const checkEmail = function(){
+            let reg = /[^\s]+@[A-Za-z]+\.[Cc][Oo][Mm]$/
+            if(reg.test(email)){
+                showCongrates()
+            }
+            else{
+                showSorry()
+            }
+        }
+
+
+    </script>
+</body>
+</html>
